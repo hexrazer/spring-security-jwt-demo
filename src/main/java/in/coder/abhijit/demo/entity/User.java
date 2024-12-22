@@ -1,9 +1,6 @@
 package in.coder.abhijit.demo.entity;
 
-import jakarta.persistence.ManyToMany;
 import java.util.Set;
-
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -29,7 +27,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(name = "as_active")
+    @Column(name = "is_active")
     private Boolean isActive = true;
 
     @ManyToMany(fetch = FetchType.EAGER)
