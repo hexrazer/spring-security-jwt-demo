@@ -9,6 +9,6 @@ class MyController{
 
     @GetMapping("/{name}")
     public String printName(@PathVariable String name){
-        return "Welcome "+name;
+        return "Welcome to spring boot security "+name;
     }
 }
