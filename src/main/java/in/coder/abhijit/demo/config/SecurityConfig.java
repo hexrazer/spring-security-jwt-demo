@@ -50,6 +50,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET,"/products/**").hasAnyRole("USER","ADMIN")
                         .requestMatchers(HttpMethod.POST,"/products/**").hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT,"/products/**").hasRole("ADMIN")
+                        .requestMatchers("/register").permitAll()
                         .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated())
                 .formLogin()
