@@ -3,9 +3,9 @@ package in.coder.abhijit.demo.controller;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +26,9 @@ class UserController{
 
     
 	private final RoleRepository roleRepository; // Repository to fetch roles from DB
+
+	@Value("${jwt.secret}")
+    private String jwtSecret;
    
 
     public UserController(UserService userService, PasswordEncoder passwordEncoder, RoleRepository roleRepository) {
@@ -33,6 +36,11 @@ class UserController{
         this.passwordEncoder = passwordEncoder;
         this.roleRepository = roleRepository;
     }
+
+	@GetMapping("/jwtSecret")
+	public void printJwtSeret(){
+		System.out.println("Jwt secret is "+jwtSecret);
+	}
 
 
    // Register a new user
