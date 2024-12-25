@@ -1,4 +1,4 @@
-package in.coder.abhijit.jwt;
+package in.coder.abhijit.demo.jwt;
 
 import java.time.Instant;
 import java.util.Base64;

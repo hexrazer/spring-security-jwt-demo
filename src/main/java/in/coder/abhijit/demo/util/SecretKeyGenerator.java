@@ -1,4 +1,4 @@
-package in.coder.abhijit.util;
+package in.coder.abhijit.demo.util;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
